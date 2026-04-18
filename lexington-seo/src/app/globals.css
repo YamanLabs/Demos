@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fcfaf8;
+  --color-foreground: #0a192f;
+}
+
+:root {
+  --background: #fcfaf8;
+  --foreground: #0a192f;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Playfair Display', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Serif Themed Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fcfaf8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0a192f20;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0a192f40;
+}
+
+/* Selection */
+::selection {
+  background: #cbd5e1;
+  color: #0a192f;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
